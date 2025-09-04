@@ -1,5 +1,5 @@
 -- Active: 1756803505701@@127.0.0.1@3310@tienda_web
-drop database tienda_web if exists; -- peligro
+drop database if exists tienda_web ; -- peligro
 
 create database if not exists  tienda_web 
 character set latin1 
@@ -16,7 +16,7 @@ create table usuarios (
     id int unsigned AUTO_INcreMENT primary key,
     nombre_usuario varchar(25) not null,
     email varchar(80) not null unique,
-    contrasena varchar(25) not null 
+    contrasena varchar(255) not null 
 );
 
 
