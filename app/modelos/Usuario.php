@@ -1,4 +1,6 @@
 <?php
+require_once('config/Database.php');
+
 class Usuario {
     private $id; // id autonumerico
     private $nombreUsuario;
@@ -59,10 +61,15 @@ class Usuario {
         } else {
             //actualizar
             $stmt = $this->bd->prepare("UPDATE usuarios SET nombre_usuario=?, email=?, contrasena=? WHERE id=?");
-            $stmt->execute([$this->nombreUsuario,$this->email,$this->contrasena, $this->id]);
+            $resultado=$stmt->execute([$this->nombreUsuario,$this->email,$this->contrasena, $this->id]);
         }
+        return $resultado;
     }
 
+    public function borrar() {
+        $stmt = $this->bd->prepare("DELETE FROM usuarios  WHERE id = ?");
+        return $stmt->execute([$this->id]);
+    }
 
     /**
      * Get the value of id
