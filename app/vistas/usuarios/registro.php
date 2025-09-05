@@ -1,4 +1,4 @@
-<form action="/registro" method="post">
+<form action="/altaUsuario" method="post">
     <div>
         <label for="nombre_usuario">Nombre de usuario<small>*</small>:</label>
         <input type="text" name="nombre_usuario" id="nombre_usuario" required>
