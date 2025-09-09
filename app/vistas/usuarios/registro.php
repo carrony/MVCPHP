@@ -1,4 +1,5 @@
-<form action="/altaUsuario" method="post">
+<?php require_once(__DIR__ . '/../../../config/config.php'); ?>
+<form action="<?php echo BASE_URL; ?>/registro/guardar" method="post">
     <div>
         <label for="nombre_usuario">Nombre de usuario<small>*</small>:</label>
         <input type="text" name="nombre_usuario" id="nombre_usuario" required>

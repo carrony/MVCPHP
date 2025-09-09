@@ -1,6 +1,5 @@
 <?php
-    require_once('app/modelos/Usuario.php');
-
+require_once(__DIR__ . '/../modelos/Usuario.php');
     class UsuarioController {
         private $bd;
 
@@ -16,8 +15,8 @@
          * Funcion del controlador que muestra el registro de usuario
          */
         public function mostrar_registro() {
-            $vista= 'app/vistas/usuarios/registro.php';
-            require('app/vistas/layout.php');
+            $vista = __DIR__ . '/../vistas/usuarios/registro.php';
+            require(__DIR__ . '/../vistas/layout.php');
         }
 
 

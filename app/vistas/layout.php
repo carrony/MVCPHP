@@ -1,28 +1,31 @@
+<?php
+require_once(__DIR__ . '/../../config/config.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechZone - Tienda de informática</title>
-    <link rel="stylesheet" href="../../public/assests/estilos.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assests/estilos.css">
 </head>
 <body>
     <header>
         <h1>TEchZone - Tu tienda de informática</h1>
         <nav>
             <ul>
-                <li><a href="/">Inicio</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/">Inicio</a></li>
             </ul>
         </nav>
         <div class="botones-login">
-            <a href="/registro">Registrarse</a>
+            <a href="<?php echo BASE_URL; ?>/registro">Registrarse</a>
         </div>
     </header>
     <main>
-        <?php include($vista); ?>
+        <?php if (isset($vista)) include($vista); ?>
     </main>
     <footer>
-        <p>$copy; <?=date('Y') ?> TechZone. Todo los derechos reservados. </p>
+        <p>&copy; <?=date('Y') ?> TechZone. Todo los derechos reservados. </p>
     </footer>
 </body>
 </html>
